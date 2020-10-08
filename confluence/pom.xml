@@ -70,10 +70,7 @@
                 <executions>
                     <execution>
                         <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
+                        <phase>pre-integration-test</phase>
                     </execution>
                     <execution>
                         <id>verify</id>
