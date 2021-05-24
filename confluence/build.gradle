@@ -1,0 +1,18 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://packages.atlassian.com/mvn/maven-public-legacy/' }
+    maven { url 'https://packages.atlassian.com/mvn/maven-public/' }
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven {
+        url 'https://nexus.adaptavist.com/content/repositories/external'
+    }
+}
+
+dependencies {
+    implementation 'com.onresolve.confluence.groovy:groovyrunner:6.27.0-SNAPSHOT'
+}

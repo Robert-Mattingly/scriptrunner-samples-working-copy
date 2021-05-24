@@ -1,0 +1,6 @@
+include(
+        'jira',
+        'confluence',
+        'bitbucket',
+        'bamboo'
+)
