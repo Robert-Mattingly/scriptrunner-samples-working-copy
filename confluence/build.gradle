@@ -14,5 +14,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.onresolve.confluence.groovy:groovyrunner:6.27.0-SNAPSHOT'
+    compileOnly 'com.adaptavist.scriptrunner.confluence.spi:scriptrunner-confluence-spi:6.27.0-SNAPSHOT'
+    implementation 'org.codehaus.groovy:groovy-all:2.5.14' //TODO: move to root project and sync to SR groovy version used
 }
