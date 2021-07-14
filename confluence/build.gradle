@@ -1,5 +1,8 @@
+import aQute.bnd.gradle.Bundle
+
 plugins {
     id 'groovy'
+    id 'biz.aQute.bnd.builder'
 }
 
 repositories {
@@ -16,4 +19,11 @@ repositories {
 dependencies {
     compileOnly 'com.adaptavist.scriptrunner.confluence.spi:scriptrunner-confluence-spi:6.27.0-SNAPSHOT'
     implementation 'org.codehaus.groovy:groovy-all:2.5.14' //TODO: move to root project and sync to SR groovy version used
+}
+
+group = 'com.adaptavist.scriptrunner.assets.samples'
+description = 'ScriptRunner Sample Plugin for Confluence'
+
+jar {
+    bnd('Require-Bundle': 'com.onresolve.confluence.groovy.groovyrunner')
 }
