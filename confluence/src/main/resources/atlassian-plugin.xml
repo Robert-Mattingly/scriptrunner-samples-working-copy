@@ -1,8 +1,18 @@
-<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+<!--
+TODO:
+While doing automatically interpolating plugin key and such from gradle build properties would be better,
+I don't want to add that complexity to this project.
+March words on scriptrunner-samples should always be "Simplest thing that will consistently work with least maintenance."
+ -->
+<atlassian-plugin key="com.adaptavist.scriptrunner.assets.samples.confluence" name="ScriptRunner Sample Plugin for Confluence"
+                  plugins-version="2">
     <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <description>
+            Sample plugin for ScriptRunner for Confluence.
+            Comes with preconfigured ScriptRunner features to allow for configuration as code.
+        </description>
+        <version>1.0.0</version>
+        <vendor name="Adaptavist.com Ltd" url="http://www.adaptavist.com"/>
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
