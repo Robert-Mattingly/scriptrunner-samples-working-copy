@@ -1,5 +1,10 @@
 import aQute.bnd.gradle.Bundle
 
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
+
+import static java.time.ZoneOffset.UTC
+
 plugins {
     id 'groovy'
     id 'biz.aQute.bnd.builder'
@@ -23,7 +28,20 @@ dependencies {
 
 group = 'com.adaptavist.scriptrunner.assets.samples'
 description = 'ScriptRunner Sample Plugin for Confluence'
+version = '1.0.0'
 
 jar {
-    bnd('Require-Bundle': 'com.onresolve.confluence.groovy.groovyrunner')
+    bnd(
+            'Require-Bundle': 'com.onresolve.confluence.groovy.groovyrunner',
+            'Bundle-Description': project.description,
+            'Bundle-SymbolicName': "${project.group}.${project.name}",
+            'Bundle-DocURL': 'http://www.example.com/',
+            'Bundle-Vendor': 'Example Company',
+            'Spring-Context': '*',
+            'Bundle-Name': project.name,
+            'Bundle-Version': project.version,
+            'Atlassian-Build-Date': OffsetDateTime.now(UTC).toLocalDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "T00:00:00+0000",
+    )
+
+
 }
