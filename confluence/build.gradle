@@ -30,7 +30,8 @@ group = 'com.adaptavist.scriptrunner.assets.samples'
 description = 'ScriptRunner Sample Plugin for Confluence'
 version = '1.0.0'
 
-jar {
+tasks.register('bundle',  Bundle) {
+    from sourceSets.main.output
     bnd(
             'Require-Bundle': 'com.onresolve.confluence.groovy.groovyrunner',
             'Bundle-Description': project.description,
@@ -42,6 +43,4 @@ jar {
             'Bundle-Version': project.version,
             'Atlassian-Build-Date': OffsetDateTime.now(UTC).toLocalDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "T00:00:00+0000",
     )
-
-
 }
